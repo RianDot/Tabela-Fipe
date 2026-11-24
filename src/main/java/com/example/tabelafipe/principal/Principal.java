@@ -36,6 +36,25 @@ public class Principal {
 
       var json = consumo.obterDados(endereco);
       IO.println(json);
+
+      int codigoMarca;
+
+      while (true) {
+          IO.println("agora digite o código da Marca desejada: ");
+          try {
+              codigoMarca = Integer.parseInt(ler.nextLine().trim());
+              break;
+          } catch (NumberFormatException e) {
+              IO.println("Entrada inválida! Digite o CÓDIGO numérico da marca, não o nome.");
+          }
+      }
+
+      var buscaMarca = endereco + "/" + codigoMarca + "/models";
+
+
+      buscaMarca = consumo.obterDados(buscaMarca);
+      IO.println(buscaMarca);
+
   }
 }
 
