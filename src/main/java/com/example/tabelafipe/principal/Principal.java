@@ -45,22 +45,27 @@ public class Principal {
               .sorted(Comparator.comparing(Dados::code))
               .forEach(System.out::println);
 
-//      int codigoMarca;
-//
-//      while (true) {
-//          IO.println("agora digite o código da Marca desejada: ");
-//          try {
-//              codigoMarca = Integer.parseInt(ler.nextLine().trim());
-//              break;
-//          } catch (NumberFormatException e) {
-//              IO.println("Entrada inválida! Digite o CÓDIGO numérico da marca, não o name.");
-//          }
-//      }
-//
-//      var buscaMarca = endereco + "/" + codigoMarca + "/models";
-//
-//      buscaMarca = consumo.obterDados(buscaMarca);
-//      IO.println(buscaMarca);
+      int codigoMarca;
+
+      while (true) {
+          IO.println("agora digite o código da Marca desejada: ");
+          try {
+              codigoMarca = Integer.parseInt(ler.nextLine().trim());
+              break;
+          } catch (NumberFormatException e) {
+              IO.println("Entrada inválida! Digite o CÓDIGO numérico da marca, não o name.");
+          }
+      }
+
+      var buscaMarca = endereco + "/" + codigoMarca + "/models";
+
+      buscaMarca = consumo.obterDados(buscaMarca);
+      var listaMarcas = converter.obterLista(buscaMarca, Dados.class);
+
+      listaMarcas.stream()
+              .sorted(Comparator.comparing(Dados::code))
+              .forEach(System.out::println);
+
 
   }
 }
