@@ -1,11 +1,11 @@
 package com.example.tabelafipe.model;
 
-public class Carro {
+public class Veiculo {
     private String marca;
     private String modelo;
     private Double valor;
     private String anoFabricacao;
-    public Carro(String marca, String modelo, Double valor, String anoFabricacao) {
+    public Veiculo(String marca, String modelo, Double valor, String anoFabricacao) {
         this.marca = marca;
         this.modelo = modelo;
         this.valor = valor;
@@ -30,7 +30,7 @@ public class Carro {
 
     @Override
     public String toString() {
-        return "Carro{" +
+        return "Veículo{" +
                 "marca='" + marca + '\'' +
                 ", modelo='" + modelo + '\'' +
                 ", valor=" + valor +
